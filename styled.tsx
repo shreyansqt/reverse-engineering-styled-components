@@ -3,7 +3,7 @@ import * as React from "react";
 const styleTag = document.createElement("style");
 document.head.appendChild(styleTag);
 
-const styled = (Tag: string) => (styleArr) => {
+const styled = (Tag) => (styleArr) => {
   // use style string to randomly generate a className
   const styles = styleArr[0].trim();
   const className = `style${hashCode(styles)}`;
@@ -15,7 +15,14 @@ const styled = (Tag: string) => (styleArr) => {
     styleTag.innerText = `${styleTag.innerText} .${className} {${styles}}`;
   }
 
-  return (props) => <Tag {...props} className={className} />;
+  return ({ className: originalClassName, ...restProps }: any) => (
+    <Tag
+      className={`${className}${
+        originalClassName ? ` ${originalClassName}` : ""
+      }`}
+      {...restProps}
+    />
+  );
 };
 
 export default styled;

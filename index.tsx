@@ -14,12 +14,17 @@ const BlueH2 = styled("h2")`
   color: blue;
 `;
 
+const RedH1WithYellowBg = styled(RedH1)`
+  background: yellow;
+`;
+
 const App = () => {
   return (
     <>
       <RedH1>RedH1</RedH1>
       <BlueH1>BlueH1</BlueH1>
       <BlueH2>BlueH2</BlueH2>
+      <RedH1WithYellowBg>RedH1WithYellowBg</RedH1WithYellowBg>
     </>
   );
 };
