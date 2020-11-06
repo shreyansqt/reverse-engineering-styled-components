@@ -1,15 +1,25 @@
-import React from "react";
+import * as React from "react";
 import ReactDOM from "react-dom";
 import styled from "./styled";
 
-const StyledH1 = styled("h1")`
+const RedH1 = styled("h1")`
   color: red;
+`;
+
+const BlueH1 = styled("h1")`
+  color: blue;
+`;
+
+const BlueH2 = styled("h2")`
+  color: blue;
 `;
 
 const App = () => {
   return (
     <>
-      <StyledH1>Red Heading</StyledH1>
+      <RedH1>RedH1</RedH1>
+      <BlueH1>BlueH1</BlueH1>
+      <BlueH2>BlueH2</BlueH2>
     </>
   );
 };
