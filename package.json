@@ -1,5 +1,9 @@
 {
+  "scripts": {
+    "start": "parcel index.html"
+  },
   "dependencies": {
+    "parcel": "^1.12.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
