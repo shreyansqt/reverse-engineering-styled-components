@@ -25,6 +25,11 @@ const styled = (Tag) => (styleArr) => {
   );
 };
 
+const tagNames = ["h1", "h2"];
+tagNames.forEach((tagName) => {
+  styled[tagName] = styled(tagName);
+});
+
 export default styled;
 
 const hashCode = (s) =>
