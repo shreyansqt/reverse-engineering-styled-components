@@ -14,7 +14,7 @@ const hashCode = (s) =>
 
 const styled = (Tag) => (styleArr) => {
   const styles = styleArr[0].trim();
-  // use styles string to randomly generate a className
+  // hash styles string to generate a className
   const className = `style${hashCode(styles)}`;
   const styleStr = `.${className} {${styles}}`;
 
@@ -26,6 +26,7 @@ const styled = (Tag) => (styleArr) => {
 
   return ({ className: originalClassName, ...restProps }: any) => (
     <Tag
+      // prefix generated className to originalClassName
       className={`${className}${
         originalClassName ? ` ${originalClassName}` : ""
       }`}
